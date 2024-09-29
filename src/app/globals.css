@@ -3,25 +3,93 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: linear-gradient(135deg, #0A0A0A 0%, #1F1F1F 100%); /* Gradiente oscuro de negro a gris oscuro */
+  --foreground: #E5E5E5; /* Texto gris claro sobre fondo oscuro */
+  --primary-color: #00FFFF; /* Celeste brillante */
+  --secondary-color: #333333; /* Gris oscuro para fondos secundarios */
+  --accent-color: #171717; /* Negro profundo para contrastes */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: linear-gradient(135deg, #000000 0%, #0A0A0A 100%); /* Fondo aún más oscuro en modo oscuro */
+    --foreground: #E5E5E5; /* Texto más claro en modo oscuro */
+    --primary-color: #1EC8FF; /* Celeste brillante */
+    --secondary-color: #20232A; /* Gris más oscuro en modo oscuro */
+    --accent-color: #00FFFF; /* Acento brillante en modo oscuro */
   }
 }
 
+/* Aplicar el fondo directamente al body */
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background) no-repeat center center fixed; /* Fondo fijo para evitar desplazamiento */
+  background-size: cover; /* Asegura que el fondo cubra toda la página */
+  font-family: 'Poppins', 'Arial', 'Helvetica', sans-serif; /* Fuente más moderna */
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh; /* Asegura que el fondo cubra toda la página */
 }
 
+/* Estilo para textos con balance */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Fondo primario */
+  .bg-primary {
+    background-color: var(--primary-color);
+  }
+
+  /* Color de texto primario */
+  .text-primary {
+    color: var(--primary-color);
+  }
+
+  /* Color de acento */
+  .text-accent {
+    color: var(--accent-color);
+  }
+
+  /* Fondo secundario */
+  .bg-secondary {
+    background-color: var(--secondary-color);
+  }
+
+  /* Fondo con sombras ligeras */
+  .bg-shadow {
+    background-color: var(--secondary-color);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Botón moderno */
+  .btn {
+    background-color: var(--primary-color);
+    color: var(--foreground);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn:hover {
+    background-color: var(--accent-color);
+    color: var(--background);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Caja con borde y sombra */
+  .box {
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Fondo con gradiente en elementos */
+  .bg-gradient {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
   }
 }
