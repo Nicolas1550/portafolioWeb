@@ -13,16 +13,18 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projectsFullStack = [
   {
-    title: "Proyecto Full Stack 1",
-    description: "Este es un proyecto Full Stack basado en React y Node.js.",
+    title: "Peluquería The Best - Plataforma E-commerce",
+    description: "Plataforma Full Stack para la gestión de salones de belleza con un sistema de e-commerce integrado. Incluye pagos con Mercado Pago, administración de empleados y ventas en tiempo real con Websockets.",
+    technologies: "Next.js, React, Redux Toolkit, MySQL, Tailwind CSS, Mercado Pago",
     image: "peluqueria.webp",
     link: "https://peluqueria-the-best.vercel.app/",
     frontendGithub: "https://github.com/Nicolas1550/PeluqueriaTheBest",
     backendGithub: "https://github.com/Nicolas1550/backendIAEcommerce",
   },
   {
-    title: "Proyecto Full Stack 2",
-    description: "Este es un proyecto Full Stack con GraphQL y MongoDB.",
+    title: "MakeUp - Plataforma de Belleza",
+    description: "Desarrollo de una plataforma full stack orientada al sector de belleza con login seguro, administración de productos y ventas. Implementación de mensajería automatizada y diseño responsivo con Tailwind CSS.",
+    technologies: "Next.js, Node.js, Express.js, MySQL, React, Tailwind CSS",
     image: "makeup.webp",
     link: "https://make-up2-0.vercel.app/",
     frontendGithub: "https://github.com/Nicolas1550/makeUp2.0",
@@ -30,17 +32,20 @@ const projectsFullStack = [
   },
 ];
 
+
 const projects = [
   {
-    title: "Proyecto 4",
-    description: "Otra aplicación móvil creada con React Native.",
+    title: "La BiciPosta - Plataforma para Ciclistas",
+    description: "Aplicación web optimizada para ciclistas que ofrece servicios y funcionalidades interactivas. Desarrollada con tecnologías modernas como Next.js y Framer Motion para animaciones fluidas.",
+    technologies: "Next.js, React, Framer Motion, Swiper.js",
     image: "bici.webp",
     link: "https://la-bici-posta.vercel.app/",
-    github: "https://github.com/user/project4",
+    github: "https://github.com/Nicolas1550/LaBiciPosta",
   },
   {
-    title: "Proyecto 3",
-    description: "Es una aplicación móvil creada con React Native.",
+    title: "CEA - Plataforma Educativa",
+    description: "Desarrollo de una aplicación móvil para la gestión de contenido educativo. Incluye autenticación segura y un diseño adaptable para diferentes dispositivos.",
+    technologies: "React Native, Firebase, Redux",
     image: "ciencia.webp",
     link: "https://cea.vercel.app/",
     github: "https://github.com/user/project3",
