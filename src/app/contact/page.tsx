@@ -38,12 +38,19 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setLoading(true);
 
+    // Aquí asegúrate de que las claves coincidan con los campos de tu plantilla en EmailJS
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email, // Este campo debe coincidir con el campo de email en tu plantilla
+      message: formData.message,
+    };
+
     emailjs
       .send(
-        "service_mwmmqvd",
-        "template_n3xuwgd",
-        formData,
-        "R93T5B0hw-lOz08xE"
+        "service_mwmmqvd", // Reemplaza con tu ID de servicio EmailJS
+        "template_n3xuwgd", // Reemplaza con tu ID de plantilla EmailJS
+        templateParams, // Pasamos los parámetros correctamente aquí
+        "R93T5B0hw-lOz08xE" // Reemplaza con tu User ID de EmailJS
       )
       .then(
         (response) => {
@@ -111,3 +118,4 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
+
