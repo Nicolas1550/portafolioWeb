@@ -40,14 +40,26 @@ export const CertificationsContainer = styled.section`
     z-index: -1;
     border-radius: 10px;
   }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    h2 {
+      font-size: 2.2rem; /* Ajuste del tamaño en móvil */
+    }
+  }
 `;
 
+// Lista de certificaciones con diseño de grid responsive
 export const CertificationList = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Se adapta a pantallas pequeñas */
   gap: 2rem;
   width: 100%;
   justify-items: center;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* En móviles, muestra una columna */
+  }
 `;
 
 export const CertificationCard = styled.div`
@@ -91,6 +103,17 @@ export const CertificationCard = styled.div`
     font-size: 1.1rem;
     margin-top: 0.5rem;
   }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    svg {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const CertificationTitle = styled.h3`
@@ -100,4 +123,8 @@ export const CertificationTitle = styled.h3`
   margin-bottom: 0.5rem;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
 `;

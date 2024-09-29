@@ -9,6 +9,10 @@ export const ContactContainer = styled.section`
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem; /* Reduce padding en pantallas móviles */
+  }
 `;
 
 // Título de la página de contacto
@@ -22,7 +26,6 @@ export const ContactTitle = styled.h2`
   position: relative;
   z-index: 1;
 
-  /* Fondo borroso celeste claro detrás del texto */
   &::before {
     content: "";
     position: absolute;
@@ -35,6 +38,11 @@ export const ContactTitle = styled.h2`
     filter: blur(10px);
     z-index: -1;
     border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem; /* Ajusta tamaño del texto en móviles */
+    margin-bottom: 3rem;
   }
 `;
 
@@ -49,6 +57,10 @@ export const Form = styled.form`
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    padding: 1.5rem; /* Reduce el padding en móviles */
+  }
 `;
 
 // Campo del formulario
@@ -66,6 +78,10 @@ export const FormField = styled.div`
     margin-right: 1rem;
     font-size: 1.5rem;
   }
+
+  @media (max-width: 768px) {
+    padding: 0.75rem; /* Ajuste de padding para móviles */
+  }
 `;
 
 // Entrada de texto
@@ -78,6 +94,11 @@ export const Input = styled.input`
   color: var(--foreground);
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
+
+  @media (max-width: 768px) {
+    padding: 0.75rem; /* Ajuste de padding para móviles */
+    font-size: 0.9rem;
+  }
 `;
 
 // Área de texto para el mensaje
@@ -92,6 +113,11 @@ export const TextArea = styled.textarea`
   font-family: "Poppins", sans-serif;
   resize: none;
   height: 150px;
+
+  @media (max-width: 768px) {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
 `;
 
 // Botón de envío
@@ -108,5 +134,10 @@ export const SubmitButton = styled.button`
   &:hover {
     background-color: var(--accent-color);
     box-shadow: 0px 8px 16px rgba(0, 191, 255, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.75rem 1.5rem; /* Ajusta padding del botón en móviles */
+    font-size: 1rem;
   }
 `;

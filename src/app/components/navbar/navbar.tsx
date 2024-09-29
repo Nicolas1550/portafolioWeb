@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Link from "next/link"; 
+import Link from "next/link";
 import { Link as ScrollLink, scroller } from "react-scroll";
 import {
   NavbarContainer,
@@ -119,9 +119,9 @@ const Navbar: React.FC = () => {
       </NavLinks>
 
       {/* Menú móvil */}
-      <MobileMenuButton onClick={toggleMenu}>
-        {isOpen ? "✕" : "☰"}
+      <MobileMenuButton $isOpen={isOpen} onClick={toggleMenu}>
       </MobileMenuButton>
+
       <MobileMenu $isOpen={isOpen}>
         <li>
           <StyledNavLink

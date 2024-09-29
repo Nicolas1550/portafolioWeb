@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 // Contenedor principal de los proyectos
-// Contenedor principal de los proyectos
-// Contenedor principal de los proyectos
 export const ProjectsContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -10,15 +8,16 @@ export const ProjectsContainer = styled.section`
   padding: 4rem 2rem;
   background: linear-gradient(
     135deg,
-    rgba(15, 15, 15, 0.95), /* Fondo más oscuro */
+    rgba(15, 15, 15, 0.95),
     rgba(35, 35, 35, 0.9),
     rgba(0, 191, 255, 0.1)
-  ); /* Fondo con un ligero toque de celeste */
+  );
   color: var(--foreground);
   justify-items: center;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    padding: 3rem 1rem; /* Ajustamos el padding en pantallas pequeñas */
   }
 `;
 
@@ -53,6 +52,10 @@ export const ProjectCard = styled.div`
   &:hover::before {
     width: 100%;
   }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 // Imagen del proyecto
@@ -69,6 +72,10 @@ export const ProjectInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
 `;
 
 // Título del proyecto
@@ -78,6 +85,10 @@ export const ProjectTitle = styled.h2`
   color: var(--primary-color);
   margin-bottom: 1rem;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
 `;
 
 // Descripción del proyecto
@@ -88,6 +99,10 @@ export const ProjectDescription = styled.p`
   line-height: 1.7;
   margin-bottom: 1.5rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 // Enlaces a los proyectos
@@ -117,6 +132,13 @@ export const ProjectLinks = styled.div`
 
     svg {
       font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    a {
+      padding: 0.5rem 1.2rem;
+      font-size: 0.9rem;
     }
   }
 `;

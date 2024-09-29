@@ -63,6 +63,10 @@ export const SocialIcons = styled.div`
       transform: scale(1.1); /* Efecto de zoom en hover */
     }
   }
+
+  @media (max-width: 768px) {
+    gap: 1rem; /* Reducimos el espacio entre iconos en móviles */
+  }
 `;
 
 // Texto del footer (copyright)
@@ -71,4 +75,8 @@ export const FooterText = styled.p`
   color: var(--foreground);
   font-family: "Poppins", sans-serif;
   opacity: 0.8;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem; /* Reducimos el tamaño de fuente en móviles */
+  }
 `;

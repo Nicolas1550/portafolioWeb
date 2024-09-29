@@ -1,17 +1,24 @@
 import styled from "styled-components";
 
 // Botón de menú para móvil
-export const MobileMenuButton = styled.button`
+export const MobileMenuButton = styled.button<{ $isOpen?: boolean }>`
   display: none;
   background: none;
   border: none;
   font-size: 2rem;
   color: var(--foreground);
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.4s ease;
+
+  &:before {
+    content: ${({ $isOpen }) => ($isOpen ? "'✕'" : "'☰'")};
+    display: block;
+    transform: ${({ $isOpen }) => ($isOpen ? "rotate(0deg)" : "rotate(0deg)")};
+    transition: transform 0.4s ease; /* Suaviza el cambio entre íconos */
+  }
 
   &:hover {
-    color: var(--primary-color); /* Cambiar el color del ícono en hover */
+    color: var(--primary-color);
   }
 
   @media (max-width: 768px) {
@@ -19,31 +26,38 @@ export const MobileMenuButton = styled.button`
   }
 `;
 
+
+
 // Menú desplegable para móvil
 export const MobileMenu = styled.ul<{ $isOpen: boolean }>`
-  display: ${({ $isOpen }) => ($isOpen ? "block" : "none")};
+  display: block;
   position: absolute;
   top: 70px;
   left: 0;
   width: 100%;
   background-color: var(--secondary-color);
   list-style: none;
-  padding: 1rem 0;
   text-align: center;
-  max-height: ${({ $isOpen }) => ($isOpen ? "300px" : "0")};
+  padding: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
+  max-height: ${({ $isOpen }) => ($isOpen ? "500px" : "0")}; /* Altura más alta */
+  opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
+  transition: max-height 0.5s ease, opacity 0.4s ease; /* Ajustamos la velocidad de la transición */
+  z-index: 1;
 
   & > li {
     margin: 1rem 0;
     font-size: 1.5rem;
+    opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
+    transition: opacity 0.3s ease;
   }
 
   @media (min-width: 769px) {
     display: none;
   }
 `;
+
+
 
 // Estilos base para el contenedor del navbar
 // Estilos base para el contenedor del navbar
@@ -91,7 +105,12 @@ export const NavLinks = styled.ul`
   flex: 1;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: 768px) {
+    display: none; /* Oculta los ítems en pantallas móviles */
+  }
 `;
+
 
 // Estilos de los enlaces individuales
 // Estilos de los enlaces individuales

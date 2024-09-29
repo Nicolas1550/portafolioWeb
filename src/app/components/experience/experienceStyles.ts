@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 // Contenedor principal de la sección de experiencia
-// Contenedor principal de la sección de experiencia
 export const ExperienceContainer = styled.section`
   padding: 4rem 2rem;
   background: linear-gradient(
@@ -22,28 +21,18 @@ export const ExperienceContainer = styled.section`
     color: var(--primary-color);
     margin-bottom: 3rem;
     font-family: "Poppins", sans-serif;
-    position: relative;
-    z-index: 1;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   }
 
-  /* Fondo borroso celeste claro detrás del texto */
-  h2::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 110%;
-    height: 110%;
-    background: rgba(0, 255, 255, 0.2);
-    filter: blur(10px);
-    z-index: -1;
-    border-radius: 10px;
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    h2 {
+      font-size: 2rem; /* Ajuste del tamaño de fuente en móvil */
+    }
   }
 `;
 
-// Nuevo contenedor para la línea de tiempo y las tarjetas
+// Contenedor para la línea de tiempo y las tarjetas
 export const TimelineContainer = styled.div`
   position: relative;
   width: 100%;
@@ -53,9 +42,7 @@ export const TimelineContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  z-index: 1;
 
-  /* Línea de tiempo central */
   &::before {
     content: "";
     position: absolute;
@@ -68,8 +55,14 @@ export const TimelineContainer = styled.div`
       var(--primary-color),
       rgba(0, 255, 255, 0.6)
     );
-    z-index: 0;
     transform: translateX(-50%);
+  }
+
+  @media (max-width: 768px) {
+    &::before {
+      left: 0; /* La línea de tiempo se alineará a la izquierda en móviles */
+      transform: none;
+    }
   }
 `;
 
@@ -95,7 +88,6 @@ export const ExperienceCard = styled.div<{ index: number }>`
     box-shadow: 0px 12px 24px rgba(0, 191, 255, 0.5);
   }
 
-  /* Puntos conectores */
   &::before {
     content: "";
     position: absolute;
@@ -108,7 +100,18 @@ export const ExperienceCard = styled.div<{ index: number }>`
     border-radius: 50%;
     box-shadow: 0px 0px 8px rgba(0, 191, 255, 0.8);
   }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Las tarjetas ocupan todo el ancho en móviles */
+    align-self: center; /* Centra todas las tarjetas */
+    &::before {
+      left: 50%;
+      transform: translateX(-50%);
+      right: unset;
+    }
+  }
 `;
+
 // Título del trabajo
 export const JobTitle = styled.h3`
   font-size: 1.8rem;
@@ -118,7 +121,7 @@ export const JobTitle = styled.h3`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra suave */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
   &::before {
     content: "";
@@ -126,6 +129,10 @@ export const JobTitle = styled.h3`
     width: 8px;
     height: 8px;
     border-radius: 50%;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem; /* Ajuste del tamaño en móviles */
   }
 `;
 
@@ -141,6 +148,10 @@ export const CompanyName = styled.h4`
 
   svg {
     color: var(--primary-color);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
   }
 `;
 
@@ -158,8 +169,13 @@ export const JobDuration = styled.p`
   svg {
     color: var(--primary-color);
   }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
+// Descripción del trabajo
 // Descripción del trabajo
 export const JobDescription = styled.p`
   font-size: 1.1rem;
@@ -168,11 +184,20 @@ export const JobDescription = styled.p`
   line-height: 1.6;
   text-align: justify;
   margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  padding-right: 1rem; /* Añadimos un poco de padding para evitar que el texto quede demasiado pegado a los bordes */
+  text-justify: inter-word; /* Controla la distribución del espacio entre palabras */
+
+  /* Ajustamos los saltos de palabra para evitar palabras cortadas en líneas más pequeñas */
+  hyphens: auto; 
+  word-break: break-word;
 
   svg {
     color: var(--primary-color);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-right: 0.5rem; /* Ajustamos el padding en móviles */
   }
 `;

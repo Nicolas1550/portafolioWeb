@@ -14,14 +14,14 @@ export const SkillsContainer = styled.section`
 
   h2 {
     margin-top: 2rem;
-    font-size: 3rem; /* Tamaño original */
+    font-size: 3rem;
     color: var(--primary-color);
-    margin-bottom: 4rem; /* Mantén el margen original */
+    margin-bottom: 4rem;
     font-family: "Poppins", sans-serif;
     position: relative;
     z-index: 1;
-    letter-spacing: 0.05em; /* Mantén el espaciado */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Sombra original */
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
   }
 
   /* Fondo borroso celeste claro detrás del texto */
@@ -33,10 +33,22 @@ export const SkillsContainer = styled.section`
     transform: translateX(-50%);
     width: 30%;
     height: 110%;
-    background: rgba(0, 255, 255, 0.2); /* Fondo celeste claro */
-    filter: blur(10px); /* Efecto de desenfoque */
+    background: rgba(0, 255, 255, 0.2);
+    filter: blur(10px);
     z-index: -1;
     border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+    }
+
+    h2::before {
+      width: 50%; /* Aumenta el ancho del fondo en móviles */
+    }
   }
 `;
 
@@ -46,6 +58,10 @@ export const SkillList = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 3rem;
   justify-items: center;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
 `;
 
 // Tarjeta individual de habilidad
@@ -72,11 +88,20 @@ export const SkillCard = styled.div`
   svg {
     font-size: 4rem;
     width: 100%;
-    max-width: 100px; /* Ancho fijo para centrar mejor el ícono */
+    max-width: 100px;
     height: auto;
     color: var(--primary-color);
-    margin: 0 auto 1rem; /* Centramos el ícono */
+    margin: 0 auto 1rem;
     display: block;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+    max-width: 180px;
+
+    svg {
+      font-size: 3rem;
+    }
   }
 `;
 
@@ -87,5 +112,9 @@ export const SkillTitle = styled.h3`
   font-family: "Poppins", sans-serif;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   margin-top: 0.5rem;
-  text-align: center; /* Aseguramos que el texto esté centrado */
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
