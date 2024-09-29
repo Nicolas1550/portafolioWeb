@@ -15,7 +15,7 @@ export const CertificationsContainer = styled.section`
   color: var(--foreground);
 
   h2 {
-    margin-top: 2rem;
+    margin-top: 4rem;
     font-size: 3rem; /* Tamaño original */
     color: var(--primary-color);
     margin-bottom: 4rem; /* Mantén el margen original */

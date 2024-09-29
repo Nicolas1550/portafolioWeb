@@ -3,7 +3,12 @@ import styled from "styled-components";
 // Contenedor principal de la página de contacto
 export const ContactContainer = styled.section`
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(45, 45, 45, 0.95), rgba(0, 191, 255, 0.2));
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.9),
+    rgba(45, 45, 45, 0.95),
+    rgba(0, 191, 255, 0.2)
+  );
   color: var(--foreground);
   display: flex;
   flex-direction: column;
@@ -41,6 +46,8 @@ export const ContactTitle = styled.h2`
   }
 
   @media (max-width: 768px) {
+    margin-top: 4rem;
+
     font-size: 2.2rem; /* Ajusta tamaño del texto en móviles */
     margin-bottom: 3rem;
   }

@@ -42,12 +42,13 @@ export const SkillsContainer = styled.section`
   @media (max-width: 768px) {
     padding: 3rem 1rem;
     h2 {
+      margin-top: 3rem;
       font-size: 2.2rem;
       margin-bottom: 3rem;
     }
 
     h2::before {
-      width: 50%; /* Aumenta el ancho del fondo en móviles */
+      width: 80%; /* Aumenta el ancho del fondo en móviles */
     }
   }
 `;
