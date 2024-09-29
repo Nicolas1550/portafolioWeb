@@ -6,7 +6,7 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer id="about">
       <ProfileImageContainer>
-        <ProfileImage src="/photo.jpg" alt="Nicolás Luciuk" />
+        <ProfileImage src="/photo.webp" alt="Nicolás Luciuk" />
       </ProfileImageContainer>
       <AboutText>
         <h1>Hola, soy Nicolás Luciuk</h1>

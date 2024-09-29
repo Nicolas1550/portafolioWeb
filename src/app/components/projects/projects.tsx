@@ -15,7 +15,7 @@ const projectsFullStack = [
   {
     title: "Proyecto Full Stack 1",
     description: "Este es un proyecto Full Stack basado en React y Node.js.",
-    image: "peluqueria.png",
+    image: "peluqueria.webp",
     link: "https://peluqueria-the-best.vercel.app/",
     frontendGithub: "https://github.com/Nicolas1550/PeluqueriaTheBest",
     backendGithub: "https://github.com/Nicolas1550/backendIAEcommerce",
@@ -23,7 +23,7 @@ const projectsFullStack = [
   {
     title: "Proyecto Full Stack 2",
     description: "Este es un proyecto Full Stack con GraphQL y MongoDB.",
-    image: "makeup.png",
+    image: "makeup.webp",
     link: "https://make-up2-0.vercel.app/",
     frontendGithub: "https://github.com/Nicolas1550/makeUp2.0",
     backendGithub: "https://github.com/Nicolas1550/makeUpBackend2.0",
@@ -34,14 +34,14 @@ const projects = [
   {
     title: "Proyecto 4",
     description: "Otra aplicación móvil creada con React Native.",
-    image: "bici.png",
+    image: "bici.webp",
     link: "https://la-bici-posta.vercel.app/",
     github: "https://github.com/user/project4",
   },
   {
     title: "Proyecto 3",
     description: "Es una aplicación móvil creada con React Native.",
-    image: "ciencia.png",
+    image: "ciencia.webp",
     link: "https://cea.vercel.app/",
     github: "https://github.com/user/project3",
   },
