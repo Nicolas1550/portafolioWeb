@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
     // Aquí asegúrate de que las claves coincidan con los campos de tu plantilla en EmailJS
     const templateParams = {
       from_name: formData.name,
-      from_email: formData.email, // Este campo debe coincidir con el campo de email en tu plantilla
+      user_email: formData.email, // Cambiado a 'user_email' para coincidir con la plantilla de EmailJS
       message: formData.message,
     };
 
