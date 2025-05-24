@@ -1,15 +1,7 @@
 "use client";
 import React from "react";
-import {
-  ProjectsContainer,
-  ProjectCard,
-  ProjectImage,
-  ProjectInfo,
-  ProjectTitle,
-  ProjectDescription,
-  ProjectLinks,
-} from "./projectsStyles";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { ProjectsContainer, ProjectCard, ProjectImage, ProjectInfo, ProjectTitle, ProjectDescription, ProjectLinks } from "./projectsStyles";
+import { FaExternalLinkAlt, FaGithub, FaPlay } from "react-icons/fa";
 
 const projectsFullStack = [
   {
@@ -20,6 +12,7 @@ const projectsFullStack = [
     link: "https://peluqueria-the-best.vercel.app/",
     frontendGithub: "https://github.com/Nicolas1550/PeluqueriaTheBest",
     backendGithub: "https://github.com/Nicolas1550/backendIAEcommerce",
+    demoVideo: "https://www.linkedin.com/feed/update/urn:li:activity:7238672562367414273/",
   },
   {
     title: "MakeUp - Plataforma de Belleza",
@@ -29,9 +22,9 @@ const projectsFullStack = [
     link: "https://make-up2-0.vercel.app/",
     frontendGithub: "https://github.com/Nicolas1550/makeUp2.0",
     backendGithub: "https://github.com/Nicolas1550/makeUpBackend2.0",
+    demoVideo: "https://www.linkedin.com/feed/update/urn:li:activity:7245273655893520386/",
   },
 ];
-
 
 const projects = [
   {
@@ -55,8 +48,6 @@ const projects = [
 const Projects: React.FC = () => {
   return (
     <ProjectsContainer id="projects">
-      {" "}
-      {/* Asignamos el id aquí */}
       {projectsFullStack.map((project, index) => (
         <ProjectCard key={index}>
           <ProjectImage src={project.image} alt={project.title} />
@@ -67,20 +58,17 @@ const Projects: React.FC = () => {
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 <FaExternalLinkAlt /> Ver Proyecto
               </a>
-              <a
-                href={project.frontendGithub}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={project.frontendGithub} target="_blank" rel="noopener noreferrer">
                 <FaGithub /> Frontend en GitHub
               </a>
-              <a
-                href={project.backendGithub}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={project.backendGithub} target="_blank" rel="noopener noreferrer">
                 <FaGithub /> Backend en GitHub
               </a>
+              {project.demoVideo && (
+                <a href={project.demoVideo} target="_blank" rel="noopener noreferrer">
+                  <FaPlay /> Demo en Video
+                </a>
+              )}
             </ProjectLinks>
           </ProjectInfo>
         </ProjectCard>
@@ -95,11 +83,7 @@ const Projects: React.FC = () => {
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 <FaExternalLinkAlt /> Ver Proyecto
               </a>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={project.github} target="_blank" rel="noopener noreferrer">
                 <FaGithub /> Código en GitHub
               </a>
             </ProjectLinks>

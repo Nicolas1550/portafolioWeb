@@ -60,7 +60,7 @@ export const TimelineContainer = styled.div`
 
   @media (max-width: 768px) {
     &::before {
-      left: 0; /* La línea de tiempo se alineará a la izquierda en móviles */
+      left: 0; /* La línea de tiempo se alinea a la izquierda en móviles */
       transform: none;
     }
   }
@@ -136,7 +136,7 @@ export const JobTitle = styled.h3`
   }
 `;
 
-// Icono y nombre de la empresa
+// Nombre de la empresa
 export const CompanyName = styled.h4`
   font-size: 1.4rem;
   font-family: "Poppins", sans-serif;
@@ -176,28 +176,31 @@ export const JobDuration = styled.p`
 `;
 
 // Descripción del trabajo
-// Descripción del trabajo
-export const JobDescription = styled.p`
+export const JobDescription = styled.div`
+  display: flex;
+  align-items: flex-start; /* Alinea el icono arriba y el texto al lado */
+  gap: 0.5rem;
   font-size: 1.1rem;
   font-family: "Poppins", sans-serif;
   color: var(--foreground);
   line-height: 1.6;
   text-align: justify;
   margin-bottom: 0;
-  padding-right: 1rem; /* Añadimos un poco de padding para evitar que el texto quede demasiado pegado a los bordes */
-  text-justify: inter-word; /* Controla la distribución del espacio entre palabras */
+  padding-right: 1rem;
+  text-justify: inter-word;
 
-  /* Ajustamos los saltos de palabra para evitar palabras cortadas en líneas más pequeñas */
   hyphens: auto; 
   word-break: break-word;
 
   svg {
     color: var(--primary-color);
+    min-width: 1.2rem; /* Asegura un ancho para que el texto no se monte sobre el ícono */
+    margin-top: 4px;   /* Ajusta un poco la posición vertical del ícono */
   }
 
   @media (max-width: 768px) {
     font-size: 1rem;
     line-height: 1.5;
-    padding-right: 0.5rem; /* Ajustamos el padding en móviles */
+    padding-right: 0.5rem;
   }
 `;

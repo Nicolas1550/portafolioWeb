@@ -31,7 +31,7 @@ export const SkillsContainer = styled.section`
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 30%;
+    width: 20%;
     height: 110%;
     background: rgba(0, 255, 255, 0.2);
     filter: blur(10px);
