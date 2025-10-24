@@ -15,14 +15,24 @@ const experiences = [
   {
     jobTitle: "E2E",
     company: "ChicksX",
-    duration: "Abril 2025 - Presente",
+    duration: "Abril 2025 - Octubre 2025",
     description:
       "Responsable de diseñar, desarrollar y ejecutar pruebas automatizadas E2E con Cypress. Trabajo de forma colaborativa con equipos de desarrollo y QA, garantizando la calidad y confiabilidad en cada entrega de producto.",
   },
+
+  {
+    jobTitle: "Freelance Full Stack / Frontend",
+    company:
+      "Clientes: Fundamentals (CEO de tu Vida), CEO Training Mentorship, Canal del Congreso",
+    duration: "Diciembre 2024 - Octubre 2025",
+    description:
+      "Diseño y desarrollo de landings y secciones enfocadas en conversión, accesibilidad y performance (LCP/CLS). Ajustes responsive, optimización SEO técnica y mejoras de UX. Si querés más detalles técnicos, consultame en la entrevista.",
+  },
+
   {
     jobTitle: "Product Engineer",
     company: "Chicks Gold Inc.",
-    duration: "Noviembre 2024 - Presente",
+    duration: "Noviembre 2024 - Octubre 2025",
     description:
       "Como Full Stack Product Engineer, soy responsable del desarrollo y mantenimiento integral de productos, garantizando rendimiento y escalabilidad. Implemento y gestiono funcionalidades en frontend y backend con Aurelia y .NET, diseñando y administrando bases de datos para optimizar servicios de cadetería y logística.",
   },
