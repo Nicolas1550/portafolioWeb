@@ -122,6 +122,14 @@ const projects = [
     link: "https://boticpartners.com",
     github: null,
   },
+  {
+    title: "Capacitación Bursátil – Landing Educativa",
+    description: "Landing page creada en Wix para ofrecer formación bursátil, enfocada en captar alumnos interesados en inversiones. Trabajé la estructura de secciones, el diseño y el copy persuasivo para transmitir claridad, confianza profesional y guiar al usuario hacia el contacto/inscripción. Incluye formularios de contacto, bloques de contenido educativo y llamados a la acción claros. Si querés más detalles técnicos, consultame en la entrevista.",
+    technologies: "Wix, Diseño orientado a conversión, Copywriting, UX",
+    image: "capacitacionbursatil.png",
+    link: "https://lnicolas62.wixsite.com/capacitacionbursatil",
+    github: null,
+  },
 ];
 
 const Projects: React.FC = () => {
