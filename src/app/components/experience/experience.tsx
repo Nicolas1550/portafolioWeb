@@ -17,10 +17,10 @@ const experiences = [
     description: "Implementación full stack con Next.js (frontend) y FastAPI (backend). Diseño de APIs, arquitectura limpia y medición de performance. Colaboración directa con diseño y producto para priorizar features y garantizar escalabilidad.",
   },
   {
-    jobTitle: "Project Manager",
+    jobTitle: "Project Manager & Tech Lead",
     company: "Ø UnderTango Club",
     duration: "Octubre 2025 - Actualidad",
-    description: "Gestión integral del proyecto con varios desarrolladores, estableciendo prioridades, guías de trabajo y supervisando entregas. Coordinación entre desarrollo, diseño y cliente para garantizar calidad, cumplimiento de plazos y coherencia técnica.",
+    description: "Liderazgo de la estrategia tecnológica y del roadmap de producto para Ø UnderTango Club, incluyendo el desarrollo de undertangoclub.com y fdiundertango.com. Definición del stack tecnológico, coordinación con el equipo para alinear objetivos de negocio y producto, y supervisión del control de calidad (QA) para garantizar lanzamientos estables, medibles y con foco en la experiencia del usuario.",
   },
   {
     jobTitle: "Freelance Full Stack / Frontend",
