@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    compiler: {
-        styledComponents: true, // Habilita el soporte para styled-components
-    },
+  reactStrictMode: true,
 };
-
 export default nextConfig;

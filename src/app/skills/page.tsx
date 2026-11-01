@@ -1,83 +1,10 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { FaReact, FaNodeJs, FaDatabase, FaJsSquare, FaAngular, FaTools } from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiTailwindcss,
-  SiMysql,
-  SiStyledcomponents,
-  SiTypescript,
-  SiRedux,
-  SiSocketdotio,
-  SiExpress,
-  SiChartdotjs,
-  SiFramer,
-  SiSequelize,
-  SiSwiper,
-} from "react-icons/si";
-import { SkillCard, SkillList, SkillsContainer, SkillTitle } from "../components/pageStyles/skillsStyles";
-import Footer from "../components/footer/footer";
-import Navbar from "../components/navbar/navbar";
-import Spinner from "../components/spinner/spinner";
-
-const skills = [
-  { title: "Next.js", icon: <SiNextdotjs /> },
-  { title: "React", icon: <FaReact /> },
-  { title: "Node.js", icon: <FaNodeJs /> },
-  { title: "Styled Components", icon: <SiStyledcomponents /> },
-  { title: "Tailwind CSS", icon: <SiTailwindcss /> },
-  { title: "MySQL", icon: <SiMysql /> },
-  { title: "JavaScript", icon: <FaJsSquare /> },
-  { title: "TypeScript", icon: <SiTypescript /> },
-  { title: "Bases de Datos", icon: <FaDatabase /> },
-  { title: "Redux Toolkit", icon: <SiRedux /> },
-  { title: "Socket.IO", icon: <SiSocketdotio /> },
-  { title: "Express.js", icon: <SiExpress /> },
-  { title: "Chart.js", icon: <SiChartdotjs /> },
-  { title: "Angular", icon: <FaAngular /> },
-  { title: "Framer Motion", icon: <SiFramer /> },
-  { title: "Sequelize", icon: <SiSequelize /> },
-  { title: "Swiper.js", icon: <SiSwiper /> },
-  { title: "EmailJS", icon: <FaTools /> },
-  { title: "Mercado Pago", icon: <FaTools /> }, 
-  { title: "Nodemailer", icon: <FaTools /> }, 
-  { title: "@sendgrid/mail", icon: <FaTools /> },
-  { title: "Helmet", icon: <FaTools /> }, 
-  { title: "express-rate-limit", icon: <FaTools /> }, 
+import Navbar from '../components/navbar/navbar';
+import Footer from '../components/footer/footer';
+import Link from 'next/link';
+import { FaArrowRight, FaCode, FaDatabase, FaChartLine } from 'react-icons/fa6';
+const skills=[
+ {icon:<FaCode/>,title:'Frontend & experiencia',intro:'Interfaces accesibles, componentes escalables y experiencias cuidadas.',names:['React','Next.js','TypeScript','JavaScript','Tailwind CSS','Styled Components','Redux Toolkit','Angular','Framer Motion']},
+ {icon:<FaDatabase/>,title:'Backend & sistemas',intro:'Integraciones, APIs, contenido y datos que sostienen un producto.',names:['FastAPI','Node.js','Express.js','.NET','Aurelia','MySQL','Payload CMS','Sequelize','WebSockets','APIs REST']},
+ {icon:<FaChartLine/>,title:'Calidad & entrega',intro:'Conectar tecnología y objetivos, probar flujos y mejorar cada entrega.',names:['Cypress','Pruebas E2E','QA','Product Engineering','SEO técnico','Performance web','Accesibilidad','Coordinación de proyectos']},
 ];
-
-const Skills: React.FC = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500); 
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <Spinner />;
-  }
-
-  return (
-    <>
-      <Navbar />
-      <SkillsContainer id="skills">
-        <h2>Habilidades</h2>
-        <SkillList>
-          {skills.map((skill, index) => (
-            <SkillCard key={index}>
-              {skill.icon}
-              <SkillTitle>{skill.title}</SkillTitle>
-            </SkillCard>
-          ))}
-        </SkillList>
-      </SkillsContainer>
-      <Footer />
-    </>
-  );
-};
-
-export default Skills;
+export default function Skills(){return <><Navbar/><main id="main-content" className="subpage"><div className="container"><p className="section-kicker">TECNOLOGÍAS / EXPERIENCIA APLICADA</p><h1>Las herramientas importan.<br/><span className="gradient-text">Lo que construís con ellas, más.</span></h1><p className="subpage-intro">Estas tecnologías aparecen en mi trayectoria profesional y proyectos. No es solo una lista: podés ver ejemplos de aplicación en los casos y trabajos publicados.</p><div className="skill-groups">{skills.map(g=><article className="skill-group" key={g.title}><span className="value-icon">{g.icon}</span><h2>{g.title}</h2><p>{g.intro}</p><div className="tech-tags">{g.names.map(n=><span key={n}>{n}</span>)}</div></article>)}</div><Link className="btn btn-primary" href="/#cases">Conocer casos reales <FaArrowRight/></Link></div></main><Footer/></>}

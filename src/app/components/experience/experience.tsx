@@ -1,110 +1,18 @@
-"use client";
-import React from "react";
-import { ExperienceContainer, TimelineContainer, ExperienceCard, JobTitle, CompanyName, JobDuration, JobDescription } from "./experienceStyles";
-import { FaBriefcase, FaBuilding, FaCalendarAlt, FaFileAlt } from "react-icons/fa";
+'use client';
+import { useState } from 'react';
+import { FaArrowRight, FaBriefcase } from 'react-icons/fa6';
 
+// Roles y fechas contrastados con el perfil de LinkedIn suministrado.
 const experiences = [
-  {
-    jobTitle: "Frontend / Full Stack Developer",
-    company: "Botic Partners",
-    duration: "Noviembre 2025 - Actualidad",
-    description: "Desarrollo y evolución del sitio con Next.js integrado a Payload CMS. Implementación de páginas y componentes reutilizables, flujos de contenido, SEO técnico y optimizaciones de performance/UX. Colaboración con diseño y producto para lanzamientos eficientes.",
-  },
-  {
-    jobTitle: "Full Stack Product Engineer",
-    company: "Equilibrio AI",
-    duration: "Octubre 2025 - Actualidad",
-    description: "Implementación full stack con Next.js (frontend) y FastAPI (backend). Diseño de APIs, arquitectura limpia y medición de performance. Colaboración directa con diseño y producto para priorizar features y garantizar escalabilidad.",
-  },
-  {
-    jobTitle: "Project Manager & Tech Lead",
-    company: "Ø UnderTango Club",
-    duration: "Octubre 2025 - Actualidad",
-    description: "Liderazgo de la estrategia tecnológica y del roadmap de producto para Ø UnderTango Club, incluyendo el desarrollo de undertangoclub.com y fdiundertango.com. Definición del stack tecnológico, coordinación con el equipo para alinear objetivos de negocio y producto, y supervisión del control de calidad (QA) para garantizar lanzamientos estables, medibles y con foco en la experiencia del usuario.",
-  },
-  {
-    jobTitle: "Freelance Full Stack / Frontend",
-    company: "Clientes: Canal del Congreso, Fundamentals (CEO de tu Vida), CEO Training Mentorship",
-    duration: "Julio 2025 - Actualidad",
-    description: "Desarrollo de landings y secciones con foco en conversión, accesibilidad y SEO. Integraciones, componentes a medida, optimización de LCP/CLS y buenas prácticas de rendimiento. Ajustes responsive y mejoras de UX basadas en métricas.",
-  },
-
-  {
-    jobTitle: "E2E",
-    company: "ChicksX",
-    duration: "Abril 2025 - Agosto 2025",
-    description: "Diseño, desarrollo y ejecución de pruebas automatizadas E2E con Cypress. Colaboración con los equipos de desarrollo y QA, garantizando releases confiables y de alta calidad.",
-  },
-  {
-    jobTitle: "Product Engineer",
-    company: "Chicks Gold Inc.",
-    duration: "Octubre 2024 - Septiembre 2025",
-    description: "Desarrollo y mantenimiento integral de productos con Aurelia y .NET, incluyendo optimización de bases de datos, backend escalable y UI enfocada en rendimiento para servicios de cadetería y logística.",
-  },
-  {
-    jobTitle: "Full Stack Developer",
-    company: "QuAI Labs",
-    duration: "Julio 2024 - Septiembre 2024",
-    description: "Desarrollé aplicaciones web completas con React y Tailwind CSS en el frontend, y Node.js con MySQL en el backend. Implementé APIs, autenticación y optimicé el rendimiento general.",
-  },
-  {
-    jobTitle: "Desarrollador Full Stack",
-    company: "Proyecto Independiente 'Salon Unisex'",
-    duration: "Julio 2024 - Septiembre 2024",
-    description: "Creé una plataforma de gestión para salones de belleza con e-commerce integrado, incluyendo panel de administración, pagos con Mercado Pago y gestión de empleados.",
-  },
-  {
-    jobTitle: "Desarrollador Full Stack",
-    company: "MakeUp - Proyecto Independiente",
-    duration: "Octubre 2023 - Enero 2024",
-    description: "Encabecé el desarrollo de ‘Makeup’, una plataforma e-commerce enfocada en el sector belleza. Implementé React y Tailwind CSS en el frontend y Node.js con MySQL en el backend, usando JWT, Nodemailer y WebSockets.",
-  },
-  {
-    jobTitle: "Tutor de Desarrollo Web y IA",
-    company: "Coderhouse",
-    duration: "Mayo 2022 - Junio 2024",
-    description: "Guío a estudiantes en tecnologías como JavaScript, Angular, React JS y fundamentos de Inteligencia Artificial. Mentoría personalizada, diseño de cursos interactivos y apoyo en proyectos con integración de IA y generación de prompts.",
-  },
-  {
-    jobTitle: "Frontend Web Developer",
-    company: "Ciencia Educa Argentina",
-    duration: "Mayo 2022 - Mayo 2023",
-    description: "Implementé aplicaciones frontend para la plataforma educativa utilizando React, Next.js y Tailwind CSS, mejorando la experiencia de usuario y la accesibilidad.",
-  },
+  { company:'Botic Partners', jobTitle:'Full Stack Developer', duration:'Oct 2025 — Actualidad', where:'España', description:'Desarrollo y mantenimiento de aplicaciones web con Next.js y Payload CMS. Integración de contenido, componentes reutilizables, optimización SEO y rendimiento.' },
+  { company:'Equilibrio AI', jobTitle:'Full Stack Developer', duration:'Nov 2025 — Actualidad', where:'Francia', description:'Soluciones full stack con Next.js y FastAPI. Construcción e integración de APIs y colaboración con los equipos de diseño y producto.' },
+  { company:'Chicks Gold Inc.', jobTitle:'Product Engineer', duration:'Oct 2024 — Sep 2025', where:'Canadá', description:'Desarrollo de productos con Aurelia y .NET, evolución de funcionalidades e integración de datos para flujos de logística y operación.' },
+  { company:'ChicksX', jobTitle:'Automatización E2E', duration:'Abr 2025 — Ago 2025', where:'Canadá', description:'Diseño, desarrollo y ejecución de pruebas end-to-end con Cypress, coordinadas con desarrollo y QA para mejorar la confiabilidad de entregas.' },
+  { company:'Ø UnderTango Club', jobTitle:'Project Manager', duration:'Nov 2025 — Dic 2025', where:'Argentina', description:'Coordinación de equipo de desarrollo, seguimiento diario, prioridades, resolución de obstáculos y comunicación con los responsables del proyecto.' },
+  { company:'Coderhouse', jobTitle:'Tutor de desarrollo web e IA', duration:'May 2022 — Nov 2024', where:'Argentina', description:'Acompañamiento a estudiantes de JavaScript, Angular, React y fundamentos de inteligencia artificial; asistencia en prácticas y proyectos.' },
+  { company:'QuAI Labs', jobTitle:'Full Stack Developer', duration:'Jul 2024 — Sep 2024', where:'Argentina', description:'Aplicaciones web con React, Tailwind CSS, Node.js, Express y MySQL; desarrollo de APIs y autenticación.' },
+  { company:'Peluquería / Salón Unisex', jobTitle:'Full Stack · Proyecto independiente', duration:'Jul 2024 — Sep 2024', where:'Argentina', description:'Plataforma de gestión y e-commerce con Next.js, Express, MySQL, roles de usuario, pagos y herramientas de administración.' },
+  { company:'MakeUp', jobTitle:'Full Stack · Proyecto independiente', duration:'Oct 2023 — Ene 2024', where:'Argentina', description:'Aplicación para el sector belleza con autenticación, administración, mensajería y visualización de ventas.' },
+  { company:'Ciencia Educa Argentina', jobTitle:'Frontend Web Developer', duration:'May 2022 — May 2023', where:'Argentina', description:'Participación en desarrollo frontend de proyectos educativos.' },
 ];
-
-const Experience: React.FC = () => {
-  return (
-    <ExperienceContainer id="experience">
-      <h2>Experiencia</h2>
-      <TimelineContainer>
-        {experiences.map((experience, index) => (
-          <ExperienceCard key={index} index={index}>
-            {/* Ícono de maletín solo en el título */}
-            <JobTitle>
-              <FaBriefcase /> {experience.jobTitle}
-            </JobTitle>
-
-            {/* Ícono de edificio para la empresa */}
-            <CompanyName>
-              <FaBuilding /> {experience.company}
-            </CompanyName>
-
-            {/* Ícono de calendario para la duración */}
-            <JobDuration>
-              <FaCalendarAlt /> {experience.duration}
-            </JobDuration>
-
-            {/* Ícono diferente en la descripción, texto en la misma línea */}
-            <JobDescription>
-              <FaFileAlt />
-              <span>{experience.description}</span>
-            </JobDescription>
-          </ExperienceCard>
-        ))}
-      </TimelineContainer>
-    </ExperienceContainer>
-  );
-};
-
-export default Experience;
+export default function Experience(){const[all,setAll]=useState(false);return <section className="experience-section section-shell" id="experience"><div className="container"><div className="section-heading"><div><p className="section-kicker">TRAYECTORIA / EQUIPOS Y PRODUCTOS</p><h2>Experiencia que va <span className="gradient-text">más allá del código.</span></h2><p>Desarrollo, producto, calidad y enseñanza: roles que me ayudaron a entender todo el ciclo de una solución digital.</p></div><span className="section-counter">EXPERIENCIA PROFESIONAL</span></div><div className="experience-list">{(all?experiences:experiences.slice(0,6)).map((item,index)=><article className="experience-row" key={item.company}><div className="experience-number">{String(index+1).padStart(2,'0')}</div><div className="experience-main"><div className="experience-company"><FaBriefcase aria-hidden="true"/> {item.company}</div><h3>{item.jobTitle}</h3><p>{item.description}</p></div><div className="experience-date">{item.duration}<small>{item.where}</small></div></article>)}</div><div className="show-all">{!all?<button className="btn btn-outline" type="button" onClick={()=>setAll(true)}>Ver experiencia completa <FaArrowRight/></button>:<button className="btn btn-outline" type="button" onClick={()=>{setAll(false);document.getElementById('experience')?.scrollIntoView({behavior:'smooth'});}}>Mostrar resumen ↑</button>}</div></div></section>}

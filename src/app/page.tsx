@@ -1,34 +1,10 @@
-"use client"
-import React, { useState, useEffect } from "react";
-import Experience from "./components/experience/experience";
-import Footer from "./components/footer/footer";
-import Header from "./components/header/header";
-import Navbar from "./components/navbar/navbar";
-import Projects from "./components/projects/projects";
-import Spinner from "./components/spinner/spinner";
+import Navbar from './components/navbar/navbar';
+import Header from './components/header/header';
+import Recruiter from './components/recruiter/recruiter';
+import Cases from './components/cases/cases';
+import Projects from './components/projects/projects';
+import Experience from './components/experience/experience';
+import Education from './components/recruiter/education';
+import Footer from './components/footer/footer';
 
-export default function Home() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500); 
-    
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <Spinner />;
-  }
-
-  return (
-    <>
-      <Navbar />
-      <Header />
-      <Projects />
-      <Experience />
-      <Footer />
-    </>
-  );
-}
+export default function Home(){return <><Navbar/><main id="main-content"><Header/><Recruiter/><Cases/><Projects/><Experience/><Education/></main><Footer/></>}
