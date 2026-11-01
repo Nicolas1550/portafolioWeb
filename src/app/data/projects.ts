@@ -1,7 +1,7 @@
-// Datos del portafolio original, conservando los 14 proyectos y sus enlaces.
+// Portfolio profesional y proyectos personales. Los enlaces se editan aquí.
 // MakeUp y Peluquería mantienen repositorios y videos: el despliegue público es una demo parcial.
 export type PortfolioProject = {
- id: string; title: string; originalTitle: string; role: string; category: string; summary: string; description: string; technologies: string[]; image: string; link: string | null; frontendGithub: string | null; backendGithub: string | null; github: string | null; demoVideo: string | null; featured: boolean; demoLimited: boolean;
+ id: string; title: string; originalTitle: string; role: string; category: string; summary: string; description: string; technologies: string[]; image: string; link: string | null; frontendGithub: string | null; backendGithub: string | null; github: string | null; demoVideo: string | null; featured: boolean; demoLimited: boolean; comingSoon?: boolean;
 };
 export const portfolioProjects: PortfolioProject[] = [
   {
@@ -328,5 +328,76 @@ export const portfolioProjects: PortfolioProject[] = [
     "demoVideo": null,
     "featured": false,
     "demoLimited": false
+  },
+  {
+    "id": "nebula",
+    "title": "NEBULA",
+    "originalTitle": "NEBULA — Universo 3D interactivo",
+    "role": "Creative Development / 3D",
+    "category": "Experiencias 3D",
+    "summary": "Un universo 3D para explorar proyectos de forma inmersiva",
+    "description": "Proyecto personal: experiencia web interactiva con una narrativa espacial, navegación visual y presentación de proyectos en un universo 3D. La demo pública y el repositorio permiten explorar tanto el resultado como el código.",
+    "technologies": [
+      "Next.js",
+      "Three.js",
+      "React",
+      "Interacción 3D"
+    ],
+    "image": "/projects/nebula.svg",
+    "link": "https://nebula-chi-two.vercel.app/",
+    "frontendGithub": null,
+    "backendGithub": null,
+    "github": "https://github.com/Nicolas1550/nebula",
+    "demoVideo": null,
+    "featured": true,
+    "demoLimited": false,
+    "comingSoon": false
+  },
+  {
+    "id": "speedv2",
+    "title": "SPEED V2",
+    "originalTitle": "SPEED V2 — Experiencia web",
+    "role": "Frontend / Creative UI",
+    "category": "Experiencias 3D",
+    "summary": "Experiencia web visual con demo pública y código disponible",
+    "description": "Proyecto web personal orientado a una presentación visual moderna. Se puede recorrer la demo publicada y consultar el repositorio para conocer los componentes y la implementación.",
+    "technologies": [
+      "Next.js",
+      "Frontend",
+      "UI interactiva"
+    ],
+    "image": "/projects/speedv2.svg",
+    "link": "https://speedv2-7rrl.vercel.app/",
+    "frontendGithub": null,
+    "backendGithub": null,
+    "github": "https://github.com/Nicolas1550/speedv2",
+    "demoVideo": null,
+    "featured": true,
+    "demoLimited": false,
+    "comingSoon": false
+  },
+  {
+    "id": "synapse",
+    "title": "SYNAPSE",
+    "originalTitle": "SYNAPSE — Living Neural Interface",
+    "role": "Proyecto en desarrollo / 3D",
+    "category": "Experiencias 3D",
+    "summary": "Interfaz neuronal 3D interactiva · Próximamente",
+    "description": "Proyecto personal en desarrollo: una experiencia de portfolio que explora redes neuronales visuales, nodos interactivos y transiciones 3D. La publicación de la demo y del repositorio está pendiente.",
+    "technologies": [
+      "Next.js",
+      "React",
+      "Three.js",
+      "WebGL"
+    ],
+    "image": "/projects/synapse.svg",
+    "link": null,
+    "frontendGithub": null,
+    "backendGithub": null,
+    "github": null,
+    "demoVideo": null,
+    "featured": false,
+    "demoLimited": false,
+    "comingSoon": true
   }
 ];

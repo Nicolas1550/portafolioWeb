@@ -261,3 +261,11 @@ body { background:#070c16; }
 @media(max-width:760px){.hero-grid{display:flex;flex-direction:column;min-height:0;padding-block:70px 100px}.hero-visual{max-width:420px;width:min(90%,420px);align-self:center}.recruiter-header{flex-direction:column;align-items:flex-start}.recruiter-grid,.case-spotlight-grid{grid-template-columns:1fr}.recruiter-card{min-height:0;padding:25px}.case-spotlight{flex-direction:row}.case-spotlight-art{flex:0 0 36%;aspect-ratio:auto;min-height:240px}.case-spotlight-info{padding:23px}.recruiter-strip{flex-wrap:wrap}.recruiter-strip a{margin-left:0}.education-layout{grid-template-columns:1fr}.education-panel{max-width:700px}.nav-menu{padding:23px 16px}.hero-scroll-hint{bottom:17px}}
 @media(max-width:600px){.case-spotlight{flex-direction:column}.case-spotlight-art{aspect-ratio:1.7;min-height:0}.case-spotlight-info{padding:23px}.recruiter-section,.cases-section,.education-section{padding:75px 0}.hero h1{font-size:clamp(41px,9vw,60px)}.hero-metrics{gap:10px}.hero-metrics strong{font-size:15px}.hero-metrics span{font-size:10px}.contact-email{font-size:16px;word-break:break-all}.recruiter-strip{font-size:9px}.recruiter-header h2{font-size:35px}}
 @media(prefers-reduced-motion:reduce){.recruiter-card:hover,.case-spotlight:hover,.case-spotlight:hover img{transform:none}}
+
+/* Proyectos personales: demos disponibles y próxima publicación */
+.portfolio-card:has(.coming-soon-notice){border-color:rgba(153,150,247,.28)}
+.coming-soon-notice{display:grid;gap:6px;padding:12px 14px;border-radius:11px;border:1px solid rgba(173,161,255,.32);background:linear-gradient(120deg,rgba(125,100,244,.13),rgba(74,194,221,.045))}
+.coming-soon-notice strong{font-size:12px;color:#d6c8ff;letter-spacing:.015em}
+.coming-soon-notice span{font-size:11px;color:#b7bdd8;line-height:1.65}
+.project-coming-soon{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:750;color:#d8c9ff;border:1px dashed rgba(177,163,255,.42);padding:10px 12px;border-radius:8px;background:rgba(150,121,239,.07)}
+.project-coming-soon:before{content:'';width:7px;height:7px;background:#bca5ff;border-radius:50%;box-shadow:0 0 10px rgba(187,167,255,.6)}

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { portfolioProjects } from '../../data/projects';
 import Link from 'next/link';
 import { FaArrowRight, FaArrowUpRightFromSquare, FaGithub, FaLinkedinIn, FaDownload } from 'react-icons/fa6';
 
@@ -19,7 +20,7 @@ export default function Header() {
           </div>
           <div className="hero-social"><span>CONOCÉ MI TRABAJO</span><a href="https://github.com/Nicolas1550" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Nicolás"><FaGithub/> GitHub</a><a href="https://linkedin.com/in/nicolas-luciuk" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Nicolás"><FaLinkedinIn/> LinkedIn</a></div>
           <div className="hero-metrics">
-            <div><strong>14</strong><span>Proyectos documentados</span></div>
+            <div><strong>{portfolioProjects.length}</strong><span>Proyectos documentados</span></div>
             <div><strong>3 disciplinas</strong><span>Full Stack · Producto · QA</span></div>
             <div><strong>4 países</strong><span>Experiencia con equipos internacionales</span></div>
           </div>
