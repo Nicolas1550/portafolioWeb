@@ -42,7 +42,7 @@ export default function Projects() {
           <label className="project-search"><FaMagnifyingGlass aria-hidden="true"/><span className="sr-only">Buscar proyectos</span><input type="search" placeholder="Buscar proyecto o tecnología..." value={query} onChange={event => setQuery(event.target.value)} /></label>
         </div>
         <div className="projects-grid">
-          {shown.map((project, index) => <article className={`portfolio-card ${project.featured && filter === 'Todos' && !query ? 'portfolio-card-featured' : ''}`} key={project.id}>
+          {shown.map((project) => <article className={`portfolio-card ${project.featured && filter === 'Todos' && !query ? 'portfolio-card-featured' : ''}`} key={project.id}>
             <div className="project-cover">
               <Image src={project.image} alt={`Vista del proyecto ${project.title}`} width={1260} height={720} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" loading="lazy" />
               <span className="cover-index">{String(orderedProjects.indexOf(project)+1).padStart(2, '0')} / {totalProjects}</span>

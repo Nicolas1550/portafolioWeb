@@ -5,9 +5,10 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import {
   ArrowDownRight, ArrowRight, ArrowUpRight, BriefcaseBusiness, Check,
-  Code2, ExternalLink, Film, Github, Layers3, Play,
+  Code2, ExternalLink, Film, Layers3, Play,
   Sparkles, X
 } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa6';
 import { profile } from '@/data/content';
 import { projectFilters, showcaseProjects, type ProjectFilter, type ShowcaseProject } from '@/data/showcase';
 
@@ -15,7 +16,7 @@ const featuredCount = showcaseProjects.filter(project => project.featured).lengt
 
 function ExternalAction({ href, label, kind='primary' }: { href:string; label:string; kind?:'primary'|'secondary' }) {
   return <a className={`work-action work-action-${kind}`} href={href} target="_blank" rel="noopener noreferrer">
-    {label === 'VIDEO DEMO' ? <Play size={15} fill="currentColor"/> : label.includes('CÓDIGO') ? <Github size={16}/> : <ExternalLink size={16}/>}
+    {label === 'VIDEO DEMO' ? <Play size={15} fill="currentColor"/> : label.includes('CÓDIGO') ? <FaGithub size={16}/> : <ExternalLink size={16}/>}
     {label}<ArrowUpRight size={14}/>
   </a>;
 }
