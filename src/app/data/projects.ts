@@ -1,7 +1,7 @@
-// Portfolio profesional y proyectos personales. Los enlaces se editan aquí.
+// Fuente única de los 22 proyectos. Editar enlaces, imágenes y descripciones aquí.
 // MakeUp y Peluquería mantienen repositorios y videos: el despliegue público es una demo parcial.
 export type PortfolioProject = {
- id: string; title: string; originalTitle: string; role: string; category: string; summary: string; description: string; technologies: string[]; image: string; link: string | null; frontendGithub: string | null; backendGithub: string | null; github: string | null; demoVideo: string | null; featured: boolean; demoLimited: boolean; comingSoon?: boolean;
+ id: string; title: string; originalTitle: string; role: string; category: string; summary: string; description: string; technologies: string[]; image: string; link: string | null; frontendGithub: string | null; backendGithub: string | null; github: string | null; demoVideo: string | null; featured: boolean; demoLimited: boolean; comingSoon?: boolean; imagePending?: boolean; needsLinks?: boolean; creative?: boolean;
 };
 export const portfolioProjects: PortfolioProject[] = [
   {
@@ -332,18 +332,19 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     "id": "nebula",
     "title": "NEBULA",
-    "originalTitle": "NEBULA — Universo 3D interactivo",
+    "originalTitle": "NEBULA V11 — Beyond the Known",
     "role": "Creative Development / 3D",
     "category": "Experiencias 3D",
-    "summary": "Un universo 3D para explorar proyectos de forma inmersiva",
-    "description": "Proyecto personal: experiencia web interactiva con una narrativa espacial, navegación visual y presentación de proyectos en un universo 3D. La demo pública y el repositorio permiten explorar tanto el resultado como el código.",
+    "summary": "Explorá tres mundos 3D con museo, laboratorio y juego interactivo",
+    "description": "Universo interactivo desarrollado con Next.js y Three.js. ORIGIN presenta proyectos mediante un museo espacial; NEXUS ofrece experimentos visuales de plasma, gravedad y ondas; INFERNO suma una experiencia jugable. La navegación incluye transiciones cinematográficas y un recorrido pensado para reclutadores.",
     "technologies": [
       "Next.js",
-      "Three.js",
       "React",
-      "Interacción 3D"
+      "Three.js",
+      "React Three Fiber",
+      "WebGL"
     ],
-    "image": "/projects/nebula.svg",
+    "image": "/projects/nebula.webp",
     "link": "https://nebula-chi-two.vercel.app/",
     "frontendGithub": null,
     "backendGithub": null,
@@ -351,22 +352,25 @@ export const portfolioProjects: PortfolioProject[] = [
     "demoVideo": null,
     "featured": true,
     "demoLimited": false,
+    "creative": true,
     "comingSoon": false
   },
   {
     "id": "speedv2",
-    "title": "SPEED V2",
-    "originalTitle": "SPEED V2 — Experiencia web",
+    "title": "SPEED Unlimited",
+    "originalTitle": "SPEED Unlimited — Landing 3D interactiva",
     "role": "Frontend / Creative UI",
     "category": "Experiencias 3D",
-    "summary": "Experiencia web visual con demo pública y código disponible",
-    "description": "Proyecto web personal orientado a una presentación visual moderna. Se puede recorrer la demo publicada y consultar el repositorio para conocer los componentes y la implementación.",
+    "summary": "Landing de producto con narrativa visual, scroll y animaciones 3D",
+    "description": "Concepto creativo independiente de una landing de bebida energética, con animaciones reactivas al desplazamiento, narrativa de producto, efectos de condensación y composición 2.5D/3D. Experimento visual no oficial, sin afiliación con la marca representada.",
     "technologies": [
       "Next.js",
-      "Frontend",
-      "UI interactiva"
+      "React",
+      "GSAP",
+      "Three.js",
+      "Animaciones"
     ],
-    "image": "/projects/speedv2.svg",
+    "image": "/projects/speed.webp",
     "link": "https://speedv2-7rrl.vercel.app/",
     "frontendGithub": null,
     "backendGithub": null,
@@ -374,30 +378,160 @@ export const portfolioProjects: PortfolioProject[] = [
     "demoVideo": null,
     "featured": true,
     "demoLimited": false,
+    "creative": true,
     "comingSoon": false
   },
   {
     "id": "synapse",
     "title": "SYNAPSE",
     "originalTitle": "SYNAPSE — Living Neural Interface",
-    "role": "Proyecto en desarrollo / 3D",
+    "role": "Creative Development / 3D",
     "category": "Experiencias 3D",
-    "summary": "Interfaz neuronal 3D interactiva · Próximamente",
-    "description": "Proyecto personal en desarrollo: una experiencia de portfolio que explora redes neuronales visuales, nodos interactivos y transiciones 3D. La publicación de la demo y del repositorio está pendiente.",
+    "summary": "Interfaz neuronal 3D interactiva con nodos y animaciones",
+    "description": "Experiencia interactiva con redes neuronales, nodos manipulables y animaciones 3D. Incluye demo pública y repositorio del proyecto.",
     "technologies": [
       "Next.js",
       "React",
       "Three.js",
       "WebGL"
     ],
-    "image": "/projects/synapse.svg",
-    "link": null,
+    "image": "/projects/synapse.webp",
+    "link": "https://synapse-le8l.vercel.app/",
     "frontendGithub": null,
     "backendGithub": null,
-    "github": null,
+    "github": "https://github.com/Nicolas1550/synapse",
     "demoVideo": null,
-    "featured": false,
+    "featured": true,
     "demoLimited": false,
-    "comingSoon": true
+    "creative": true,
+    "comingSoon": false
+  },
+  {
+    "id": "atlas",
+    "title": "ATLAS — Earth Intelligence",
+    "originalTitle": "ATLAS — Global Seismic Intelligence Platform",
+    "role": "Full Stack / Data Visualization",
+    "category": "Full Stack",
+    "summary": "Inteligencia sísmica global con globo 3D, datos USGS y persistencia",
+    "description": "Plataforma Full Stack para explorar actividad sísmica mundial. Integra información de USGS, visualización geoespacial sobre un globo 3D y herramientas de consulta histórica. Incorpora autenticación, registros en PostgreSQL (Neon), alertas y una integración de eventos de seguridad con SENTINEL.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Three.js",
+      "PostgreSQL",
+      "USGS API"
+    ],
+    "image": "/projects/atlas.webp",
+    "link": "https://atlas-gamma-blue.vercel.app/",
+    "frontendGithub": null,
+    "backendGithub": null,
+    "github": "https://github.com/Nicolas1550/atlas",
+    "demoVideo": null,
+    "featured": true,
+    "demoLimited": false,
+    "comingSoon": false
+  },
+  {
+    "id": "eon",
+    "title": "EON — The Living City",
+    "originalTitle": "EON — The Living City",
+    "role": "Full Stack / Creative 3D",
+    "category": "Experiencias 3D",
+    "summary": "Una ciudad 3D viva con tráfico, vegetación y experiencias interactivas",
+    "description": "Experiencia Full Stack de exploración urbana con Next.js, Three.js, vehículos, peatones, árboles y escenarios 3D. Incluye funcionalidades de autenticación y gestión de ciudades mediante APIs y persistencia PostgreSQL. Proyecto experimental centrado en combinar simulación visual y arquitectura web.",
+    "technologies": [
+      "Next.js",
+      "React",
+      "Three.js",
+      "TypeScript",
+      "PostgreSQL"
+    ],
+    "image": "/projects/eon.webp",
+    "link": "https://eon-three-henna.vercel.app/",
+    "frontendGithub": null,
+    "backendGithub": null,
+    "github": "https://github.com/Nicolas1550/eon",
+    "demoVideo": null,
+    "featured": true,
+    "demoLimited": false,
+    "comingSoon": false
+  },
+  {
+    "id": "frame",
+    "title": "FRAME Studio",
+    "originalTitle": "FRAME Studio V4 — Creator OS",
+    "role": "Creative Tools / Full Stack",
+    "category": "Full Stack",
+    "summary": "Editor audiovisual en navegador con timeline multipista, efectos y exportación",
+    "description": "Editor audiovisual experimental de enfoque local-first, con edición multipista de video, texto y audio, transiciones, keyframes, subtítulos SRT, presets para redes, comentarios de revisión y proyectos guardados en IndexedDB. La demo pública en Vercel funciona como aplicación estática: la edición ocurre en el navegador, sin colaboración remota ni renderizado en servidor.",
+    "technologies": [
+      "JavaScript",
+      "Node.js",
+      "Canvas API",
+      "MediaRecorder",
+      "IndexedDB"
+    ],
+    "image": "/projects/frame.webp",
+    "link": "https://frame-sandy-nine.vercel.app/",
+    "frontendGithub": null,
+    "backendGithub": null,
+    "github": "https://github.com/Nicolas1550/frame",
+    "demoVideo": null,
+    "featured": true,
+    "demoLimited": false,
+    "comingSoon": false
+  },
+  {
+    "id": "sentinel",
+    "title": "SENTINEL",
+    "originalTitle": "SENTINEL V5 — Security Monitoring SaaS",
+    "role": "Full Stack / Cybersecurity",
+    "category": "Full Stack",
+    "summary": "Monitoreo de eventos de seguridad, incidentes y aplicaciones conectadas",
+    "description": "Plataforma Full Stack de telemetría y monitoreo de seguridad. Permite registrar aplicaciones, emitir claves de integración y recibir eventos para mostrar actividad, incidentes y señales sospechosas. Incluye detección configurable de accesos fallidos y correlación de incidentes, con almacenamiento en PostgreSQL (Neon) e integración con ATLAS.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Neon",
+      "API Keys",
+      "Security Events"
+    ],
+    "image": "/projects/sentinel.webp",
+    "link": "https://sentinel-sooty-two.vercel.app/",
+    "frontendGithub": null,
+    "backendGithub": null,
+    "github": "https://github.com/Nicolas1550/sentinel",
+    "demoVideo": null,
+    "featured": true,
+    "demoLimited": false,
+    "comingSoon": false
+  },
+  {
+    "id": "quantum",
+    "title": "QUANTUM — Trading Terminal",
+    "originalTitle": "QUANTUM — Financial Intelligence Terminal",
+    "role": "Full Stack / Financial Tech",
+    "category": "Full Stack",
+    "summary": "Terminal de análisis de mercados con gráficos, indicadores y paper trading",
+    "description": "Terminal financiera Full Stack para investigación y operaciones simuladas (paper trading). Incluye gráficos interactivos, indicadores técnicos, watchlists, búsqueda de activos, análisis de carteras y gestión de posiciones demo. Integra datos de proveedores externos según disponibilidad, autenticación y persistencia PostgreSQL (Neon). No ejecuta operaciones bursátiles reales.",
+    "technologies": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Neon",
+      "Market APIs"
+    ],
+    "image": "/projects/quantum.webp",
+    "link": "https://trading-indol-tau.vercel.app/",
+    "frontendGithub": null,
+    "backendGithub": null,
+    "github": "https://github.com/Nicolas1550/trading",
+    "demoVideo": null,
+    "featured": true,
+    "demoLimited": false,
+    "comingSoon": false
   }
 ];

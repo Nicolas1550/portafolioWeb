@@ -7,7 +7,7 @@ import { portfolioProjects } from '../../data/projects';
 const filters = ['Todos', 'Full Stack', 'Experiencias 3D', 'Calidad & producto', 'Liderazgo', 'Web & UX'];
 // Los casos profesionales y de producto primero, sin ocultar proyectos personales.
 const orderedProjects = [...portfolioProjects].sort((a,b) => {
-  const priority=['boticpartners','equilibrio','chicksgold','nebula','speedv2','synapse','chicksx','tangoWeb','congreso'];
+  const priority=['boticpartners','equilibrio','chicksgold','frame','sentinel','quantum','atlas','synapse','eon','nebula','speedv2','makeup','peluqueria','chicksx','tangoWeb','congreso'];
   const aIndex=priority.indexOf(a.id);
   const bIndex=priority.indexOf(b.id);
   if(aIndex>=0&&bIndex>=0)return aIndex-bIndex;
@@ -27,7 +27,7 @@ export default function Projects() {
   }), [filter, query]);
   const totalProjects = portfolioProjects.length;
   const totalAreas = new Set(portfolioProjects.map(project => project.category)).size;
-  const shown = filter !== 'Todos' || query.trim() || showAll ? filtered : filtered.slice(0,9);
+  const shown = filter !== 'Todos' || query.trim() || showAll ? filtered : filtered.slice(0,12);
   return (
     <section className="projects-section section-shell" id="projects">
       <div className="container">
@@ -44,19 +44,18 @@ export default function Projects() {
         <div className="projects-grid">
           {shown.map((project, index) => <article className={`portfolio-card ${project.featured && filter === 'Todos' && !query ? 'portfolio-card-featured' : ''}`} key={project.id}>
             <div className="project-cover">
-              <Image src={project.image} alt={project.id === 'nebula' || project.id === 'speedv2' || project.id === 'synapse' ? `Ilustración conceptual de ${project.title}` : `Captura del proyecto ${project.title}`} width={1260} height={720} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" loading="lazy" />
+              <Image src={project.image} alt={`Vista del proyecto ${project.title}`} width={1260} height={720} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" loading="lazy" />
               <span className="cover-index">{String(orderedProjects.indexOf(project)+1).padStart(2, '0')} / {totalProjects}</span>
-              <span className="cover-type">{project.comingSoon ? 'PRÓXIMAMENTE' : project.role}</span>
+              <span className="cover-type">{project.role}</span>
             </div>
             <div className="portfolio-card-body">
               <div className="project-heading-row"><h3>{project.title}</h3><span className="project-category">{project.category}</span></div>
               <p className="project-summary">{project.summary}</p>
               <div className="tech-tags">{project.technologies.slice(0,4).map(t => <span key={t}>{t}</span>)}{project.technologies.length>4 && <span>+{project.technologies.length-4}</span>}</div>
-              {project.comingSoon && <div className="coming-soon-notice" role="status"><strong>Próximamente</strong><span>SYNAPSE está en desarrollo. La demo y el código se publicarán cuando estén listos.</span></div>}
               {project.demoLimited && <div className="demo-notice"><strong>Demo pública parcial</strong><span>El despliegue actual muestra principalmente la interfaz; el backend y el catálogo no se mantienen activos por costos de infraestructura. El video y los repositorios permiten conocer más del desarrollo.</span></div>}
               <details className="case-details"><summary>Ver mi trabajo y detalles técnicos <FaArrowRight aria-hidden="true"/></summary><p>{project.description}</p></details>
               <div className="project-actions">
-                {project.comingSoon && <span className="project-coming-soon" aria-label="Proyecto próximamente disponible">Próximamente</span>}
+                {project.creative && <a href={`/projects/${project.id}`}><FaArrowRight/> Caso de estudio</a>}
                 {project.link && <a href={project.link} target="_blank" rel="noopener noreferrer"><FaArrowUpRightFromSquare/> {project.demoLimited ? 'Ver interfaz' : 'Visitar sitio'}</a>}
                 {project.demoVideo && <a href={project.demoVideo} target="_blank" rel="noopener noreferrer"><FaPlay/> Video demo</a>}
                 {(project.github || project.frontendGithub) && <a href={project.github || project.frontendGithub || '#'} target="_blank" rel="noopener noreferrer"><FaGithub/> Código{project.frontendGithub ? ' frontend' : ''}</a>}

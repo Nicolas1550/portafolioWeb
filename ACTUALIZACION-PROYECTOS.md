@@ -1,3 +1,5 @@
+> ACTUALIZACIÓN FINAL: los links de SENTINEL y QUANTUM y las siete portadas ya fueron incorporados. Información al día en ACTUALIZACION_22_PROYECTOS.md.
+
 # Actualización del portfolio — NEBULA, SPEED V2 y SYNAPSE
 
 ## Cambios

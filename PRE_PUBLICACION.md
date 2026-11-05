@@ -1,3 +1,5 @@
+> Los enlaces y siete portadas solicitados ya se incorporaron. Consultá ACTUALIZACION_22_PROYECTOS.md para los destinos finales.
+
 # Checklist de publicación
 
 - [ ] Ejecutar `npm install` desde esta carpeta y generar `package-lock.json` nuevo.

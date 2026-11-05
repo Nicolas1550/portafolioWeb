@@ -1,6 +1,8 @@
+> **Edición 2026/11:** incorporados FRAME, SENTINEL y QUANTUM (22 proyectos). Mirá [ACTUALIZACION_22_PROYECTOS.md](./ACTUALIZACION_22_PROYECTOS.md) para consultar enlaces e imágenes incorporados.
+
 # Portfolio de Nicolás Luciuk — Edición final
 
-Portfolio profesional centrado en experiencia de producto, ingeniería full stack y calidad. Esta es la evolución independiente de NEBULA: un sitio liviano y directo para reclutadores, con casos de trabajo, galería de 17 proyectos, trayectoria, CV descargable y contacto.
+Portfolio profesional centrado en experiencia de producto, ingeniería full stack y calidad. Esta es la evolución independiente de NEBULA: un sitio liviano y directo para reclutadores, con casos de trabajo, galería de 22 proyectos, trayectoria, CV descargable y contacto.
 
 ## Contenido de la edición
 
@@ -28,7 +30,7 @@ npm run dev
 
 Abrir `http://localhost:3000`.
 
-> Esta entrega se verificó con un analizador de sintaxis TS/TSX y pruebas de integridad de 17 proyectos y 17 imágenes. **No se pudo ejecutar `npm run build` aquí porque el entorno no tenía acceso al registro npm.** Es obligatorio compilarla localmente antes de publicar en producción.
+> Esta entrega se verificó con un analizador de sintaxis TS/TSX y pruebas de integridad de 22 proyectos y 22 imágenes. **No se pudo ejecutar `npm run build` aquí porque el entorno no tenía acceso al registro npm.** Es obligatorio compilarla localmente antes de publicar en producción.
 
 ### Framework y seguridad
 

@@ -1,0 +1,33 @@
+{
+  "version": "2026-11-05",
+  "enlaces_pendientes": [],
+  "capturas_pendientes": [],
+  "portadas_actualizadas": [
+    "frame",
+    "sentinel",
+    "quantum",
+    "synapse",
+    "atlas",
+    "eon",
+    "nebula"
+  ],
+  "speed_conservado": "/projects/speed.webp",
+  "enlaces": {
+    "frame": {
+      "demo": "https://frame-sandy-nine.vercel.app/",
+      "github": "https://github.com/Nicolas1550/frame"
+    },
+    "quantum": {
+      "demo": "https://trading-indol-tau.vercel.app/",
+      "github": "https://github.com/Nicolas1550/trading"
+    },
+    "sentinel": {
+      "demo": "https://sentinel-sooty-two.vercel.app/",
+      "github": "https://github.com/Nicolas1550/sentinel"
+    },
+    "synapse": {
+      "demo": "https://synapse-le8l.vercel.app/",
+      "github": "https://github.com/Nicolas1550/synapse"
+    }
+  }
+}
